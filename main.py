@@ -39,9 +39,9 @@ def getNewImage(imgName,imgExt,img, matiz, x):
     originalHSV = convertImgToHSV(img)
     newHSV = getNewHSV(originalHSV,matiz,x)
     imageRGB = cv.cvtColor(newHSV, cv.COLOR_HSV2BGR)
-    cv.imshow('Imagem Com as matiz alterada', imageRGB)
+    cv.imshow('Imagem', imageRGB)
     cv.imwrite('./results/{0}M{1}X{2}.{3}'.format(imgName,str(matiz),str(x),imgExt),imageRGB)
-    cv.waitKey(5000)
+    cv.waitKey(0)
     return
 
 
@@ -57,7 +57,6 @@ def getUserData():
     return imgName,imgExt,img,matiz,x
     
 def main():
-    
     imgName,imgExt,img,matiz,x = getUserData()
     getNewImage(imgName,imgExt,img,matiz,x)
 
