@@ -28,7 +28,7 @@ def alterH(H, matiz, x):
 
 def getNewHSV(originalHSV,m,x):
     H,S,V = cv.split(originalHSV)
-    H = alterH(h,m,x)
+    H = alterH(H,m,x)
     newHSV = cv.merge([H,S,V])
     return newHSV
     
